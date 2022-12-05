@@ -8,17 +8,18 @@ import maskot from '../assets/images/navicons/maskot.png'
 import sawyer from '../assets/images/navicons/sawyer.png'
 
 import React, { lazy, useState } from 'react';
+import { Link } from 'react-router-dom'
 
-const Navigation = () => {
+const MainNavigation = () => {
   const [show , setShow] = React.useState(false)
 
   return (
     <nav className='nav'> 
       <ul>
-        <a href=""><img className="logo"  src={logo}  alt="" /></a>
-        <li className='navtext transition ease-out duration-500'>PRODUCTS</li>
-        <li className='navtext transition ease-out duration-500'>FEATURED</li>
-        <li className='navtext transition ease-out duration-500'>FUNATICS!</li>
+        <Link to={`/`}><img className="logo"  src={logo}  alt="" /></Link>
+        <li className='navtext transition ease-out duration-500'><Link to={"/products"} className='nl'>PRODUCTS</Link></li>
+        <li className='navtext transition ease-out duration-500'><Link className='nl'>FEATURED</Link></li>
+        <li className='navtext transition ease-out duration-500'><Link className='nl'>FUNATICS!</Link></li>
       </ul>
       <ul>
         <div className='searchicont h-[1.8rem] w-[13rem] rounded-[24px] bg-white overflow-hidden'>
@@ -41,7 +42,7 @@ const Navigation = () => {
 
 const SideNavigation = ({closeNav}) => {
   return (
-    <div className='sidenavigation-active'>
+    <div className='sidenavigation-active z-50'>
       <ul className='ul1'>
         <li><i className="fa-solid fa-circle-user"></i></li>
         <li onClick={()=> closeNav(false)}><i class="fa-regular fa-xmark x "></i></li>
@@ -59,11 +60,7 @@ const SideNavigation = ({closeNav}) => {
         <SideNavItem img={maskot} label={"SHOP"} sublabel={"&By Type"}/>
         <SideNavItem img={sawyer} label={"SHOP ALL"} sublabel={""}/>
 
-        {/* <li>ANIMATION</li>
-        <li>MOVIES</li>
-        <li>ICONS</li>
-        <li>SHOP</li>
-        <li>SHOP ALL</li> */}
+  
       </ul>
       <ul className='ul4 flex items-center justify-start'>
         <i className="fa-sharp fa-solid fa-earth-americas px-2"></i><span>UNITED STATES</span>
@@ -86,4 +83,4 @@ const SideNavItem = (props) => {
 
 
 
-export default Navigation
+export default MainNavigation

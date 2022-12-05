@@ -19,6 +19,8 @@ app.get("/", (req, res)=>{
     res.json("hello this is the backend")
 })
 
+
+// -----------------------get---------------------------- 
 app.get("/products", (req, res)=>{
     const q = "SELECT * FROM products"
     db.query(q,(err, data)=>{
@@ -27,13 +29,27 @@ app.get("/products", (req, res)=>{
     })  
 })
 
+// --------------------------get1------------------------
+
+// http://localhost:8080/products/details/14
+app.get("/products/details/:id", (req, res)=>{
+    const productId = req.params.id;
+    const q = 'SELECT * FROM test.products WHERE id = ?'
+    db.query(q,[productId],(err, data)=>{
+        if(err) return res.json(err)
+        return res.json(data)
+    })  
+})
+
+
+// -----------------------post---------------------------- 
 app.post("/insertProducts", (req, res)=>{
     const q = "INSERT INTO `test`.`products` (`category`, `product_name`, `product_no`, `product_description`, `price`) VALUES (?);"
     const values = [ 
         req.body.category, 
         req.body.product_name, 
         req.body.product_no, 
-        req.body_description, 
+        req.body.product_description, 
         req.body.price]
     
     db.query(q,[values],(err, data)=>{
@@ -41,6 +57,36 @@ app.post("/insertProducts", (req, res)=>{
         return res.json("new product created")
     })
 })
+
+ 
+// -----------------------put---------------------------- 
+app.put("/updateProducts/:id", (req, res)=>{
+    const bookId = req.params.id;
+    const q = "UPDATE `test`.`products` SET `category` = ?, `product_name` = ?, `product_no` = ?, `product_description` = ?, `price` = ? WHERE id = ?"
+    const values = [ 
+        req.body.category, 
+        req.body.product_name, 
+        req.body.product_no, 
+        req.body_description, 
+        req.body.price]
+    
+    db.query(q,[...values, bookId],(err, data)=>{
+        if(err) return res.json(err)
+        return res.json("product updated sucessfully")
+    })
+})
+
+// =========================================
+app.put("/deleteProducts/:id", (req, res)=>{
+    const bookId = req.params.id;
+    const q = "DELETE FROM `test`.`products` WHERE (`id` = ?);"
+    db.query(q,[bookId],(err, data)=>{
+        if(err) return res.json(err)
+        return res.json("product deleted sucessfully")
+    })
+})
+
+
 
 app.listen(8080, () =>{
     console.log('connected to backesdndssss')

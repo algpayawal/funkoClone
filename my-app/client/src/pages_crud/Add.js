@@ -15,6 +15,8 @@ const Add = () => {
    
   });
 
+  console.log(addProduct)
+
   const navigate = useNavigate()
 
   const handleChange = (e) => {
@@ -32,7 +34,7 @@ const Add = () => {
 
   return ( 
     <section>
-      <div className='py-[10rem] w-full h-full flex flex-col justify-center items-center'>
+      <form className='py-[10rem] w-full h-full flex flex-col justify-center items-center'>
         <h1>ADD NEW PRODUCT</h1>
         <div className='addinput  flex flex-col'>
           <input type="text" placeholder='Category' onChange={handleChange} name="category"/>
@@ -42,7 +44,7 @@ const Add = () => {
           <input type="number" placeholder='Price' onChange={handleChange} name="price"/>
         </div>
         <button onClick={handleClick} type="button" className='cardbtn mt-2  w-[400px] h-[2.5rem]  rounded-[28px] bg-[#f3f3f7] '>ADD NEW</button>
-      </div>
+      </form>
 
 
     </section>

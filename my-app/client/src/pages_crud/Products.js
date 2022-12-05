@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const Products = () => {
     const [products, setProducts]= useState([])
@@ -32,7 +33,8 @@ const Products = () => {
                 <li className=''>{product.price} $</li>
             </ul>
           
-            <button type="button" className='cardbtn mt-2  w-[100%] h-[2.5rem]  rounded-[28px] bg-[#f3f3f7] '>ADD TO CART</button>
+            {/* <button type="button" className='cardbtn mt-2  w-[100%] h-[2.5rem]  rounded-[28px] bg-[#f3f3f7] '><Link to={`/update/${product.id}`}>ADD TO CART</Link>  </button> */}
+            <button type="button" className='cardbtn mt-2  w-[100%] h-[2.5rem]  rounded-[28px] bg-[#f3f3f7] '><Link to={`/products/details/${product.id}`}>ADD TO CART</Link>  </button>
              
             
         </div>

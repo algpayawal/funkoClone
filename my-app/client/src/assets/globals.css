@@ -3,203 +3,220 @@
 @tailwind utilities;
 
 /* font-family: 'Montserrat', sans-serif; */
-/* font-family: 'Russo One', sans-serif; */  
+
+
+/* font-family: 'Russo One', sans-serif; */
+
 
 /* 
 font-family: 'Montserrat', sans-serif;
 font-family: 'Oswald', sans-serif;
 font-family: 'Russo One', sans-serif; */
 
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    list-style: none;
+}
 
-*{
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-   list-style: none;
+.nav {
+    height: 56px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav ul {
+    display: flex;
+    margin: 0 3.1rem 0 3.1rem;
+    align-items: center;
+}
+
+.nav ul li {
+    color: white;
+    padding: 1rem;
+    font-weight: 700;
+    font-family: Montserrat, sans-serif;
 }
 
  
 
-.nav{
-   height: 56px;
-   background-color: rgb(0, 0, 0);
-   display: flex;
-   justify-content: space-between;
+
+.nav ul li .nl {
+    color: white;
+    padding: .1px;
+    font-weight: 700;
+    font-family: Montserrat, sans-serif;
 }
 
-.nav ul{
-   display: flex;
-   margin: 0 3.1rem 0 3.1rem ;
-   align-items: center;
+.nav ul li .nl:hover {
+    color: black;
+} 
+
+.nav ul li i {
+    font-weight: 700;
+    font-size: 24px;
+    color: white
 }
 
-.nav ul li{
-   color:white;
-   padding: 1rem;
-   font-weight: 700;
-   font-family: Montserrat, sans-serif;
-   
+.nav ul a {
+    /* background-color: aqua; */
+    padding: 0 4rem 0 0;
 }
 
-.nav ul li i{
-   font-weight: 700;
-   font-size: 24px;
-   color:white
+.logo {
+    max-width: 68px;
 }
 
-.nav ul a{
-   /* background-color: aqua; */
-   padding: 0 4rem 0 0;
+.menu,
+.searchicontres {
+    display: none;
 }
 
-.logo{
-   max-width: 68px;
-}
-
-.menu, .searchicontres{
-   display: none;
-}
-
-
-.navtext:hover{
-   background-color: white;
-   color: black;
+.navtext:hover {
+    background-color: white;
 }
 
  
  
+
 /* =======================sidenavigation======================== */
 
-.sidenavigation-active{
-   position: absolute;
-   right: 0;
-   height: 100vh;
-   width: 20rem;
-   background-color: #f3f3f7;
+.sidenavigation-active {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    width: 20rem;
+    background-color: #f3f3f7;
 }
 
- 
-.sidenavigation-active .ul1{
-   display: flex;
-   justify-content: space-between;
-   margin: 10px 20px 10px 30px;
+.sidenavigation-active .ul1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px 10px 30px;
 }
 
-.sidenavigation-active .ul1 li i{
-   color: black;
-   font-size: 38px;
+.sidenavigation-active .ul1 li i {
+    color: black;
+    font-size: 38px;
 }
 
-.sidenavigation-active .ul1 .x{
-   color: rgb(96, 94, 94);
-   font-size: 28px;
+.sidenavigation-active .ul1 .x {
+    color: rgb(96, 94, 94);
+    font-size: 28px;
 }
 
-.sidenavigation-active .ul2{
-   display: flex;
-   justify-content: space-around;
-   
+.sidenavigation-active .ul2 {
+    display: flex;
+    justify-content: space-around;
 }
 
-.sidenavigation-active .ul2 li{ 
-   color: black;
-   padding: 16px 0px 16px 0px; 
-   margin: 0 10px 0 10px;
-   font-size: 18px;
-   font-family: 'Oswald', sans-serif;
+.sidenavigation-active .ul2 li {
+    color: black;
+    padding: 16px 0px 16px 0px;
+    margin: 0 10px 0 10px;
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
 }
 
-.sidenavigation-active .ul3{
-   display: grid;
-   grid-template-columns: 1fr;
-   padding: 16px 0 0 0 ;
-   margin: 0 0 0 2rem;
+.sidenavigation-active .ul3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 16px 0 0 0;
+    margin: 0 0 0 2rem;
 }
 
- 
-
- 
-
-.sidenavigation-active .ul4{
-   padding: 16px 8px 16px 8px;
+.sidenavigation-active .ul4 {
+    padding: 16px 8px 16px 8px;
 }
-.sidenavigation-active .ul4 i, .sidenavigation-active .ul4 span{
-   color: black;
+
+.sidenavigation-active .ul4 i,
+.sidenavigation-active .ul4 span {
+    color: black;
 }
+
 
 /* =======================footer======================== */
-.webstore{
-   padding: .8rem 11% .8rem 11%;
-}
-.sociallinks{
-   padding: 10px;
-   display: flex;
-   height: 4.5rem;
-}
-.sociallinks img{
-   height: 3.1rem;
-   padding-right: 1rem;
+
+.webstore {
+    padding: .8rem 11% .8rem 11%;
 }
 
-
-footer{
-   padding: 0 0 4rem 0;
-   background-color: #f3f3f7;
-}
-.footersection{
-   padding: 1rem; 
+.sociallinks {
+    padding: 10px;
+    display: flex;
+    height: 4.5rem;
 }
 
-.footersection div{
-   display: flex;
-   justify-content: space-around;
-   margin: 0 7rem 0 7rem;
+.sociallinks img {
+    height: 3.1rem;
+    padding-right: 1rem;
+}
+
+footer {
+    padding: 0 0 4rem 0;
+    background-color: #f3f3f7;
+}
+
+.footersection {
+    padding: 1rem;
+}
+
+.footersection div {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 7rem 0 7rem;
 }
 
 .footersection div ul {
-   width: 12.5rem;
-   margin: 1rem;
-}
-.footersection div ul h2{
-   font-weight: 800;
-   margin: 0 0 12px 0;
-   font-size: 15px;
-}
-.footersection div ul li{
-   padding: 4px 0 4px 0;
-   margin: 2px 0 2px 0;
-   font-size: 13.5px;
+    width: 12.5rem;
+    margin: 1rem;
 }
 
-.footersection section{
-   text-align: center;
+.footersection div ul h2 {
+    font-weight: 800;
+    margin: 0 0 12px 0;
+    font-size: 15px;
 }
 
-
-.socialmedia{
-   background-color: black;
-   display: flex;
-   padding: 16px;
+.footersection div ul li {
+    padding: 4px 0 4px 0;
+    margin: 2px 0 2px 0;
+    font-size: 13.5px;
 }
 
-.socialmedia ul{
-   display: flex;
+.footersection section {
+    text-align: center;
 }
 
-.socialmedia ul li img{
-   height: 50px;
-   margin: 16px;
+.socialmedia {
+    background-color: black;
+    display: flex;
+    padding: 16px;
+}
+
+.socialmedia ul {
+    display: flex;
+}
+
+.socialmedia ul li img {
+    height: 50px;
+    margin: 16px;
 }
 
 @media only screen and (max-width: 1020px) {
-   .nav ul .navtext, .searchicont, .usericont, .globeicont{
-     display: none;
-   }
-
-   .menu , .searchicontres{
-      display: block;
-   }
- }
+    .nav ul .navtext,
+    .searchicont,
+    .usericont,
+    .globeicont {
+        display: none;
+    }
+    .menu,
+    .searchicontres {
+        display: block;
+    }
+}
