@@ -7,12 +7,11 @@ import { useNavigate } from 'react-router-dom';
 const Add = () => {
   const [addProduct,setAddProduct] = useState({
     category:"",
+    license:"",
     product_name:"",
     product_no:"",
     product_description:"",
     price:"",
-
-   
   });
 
   console.log(addProduct)
@@ -38,10 +37,16 @@ const Add = () => {
         <h1>ADD NEW PRODUCT</h1>
         <div className='addinput  flex flex-col'>
           <input type="text" placeholder='Category' onChange={handleChange} name="category"/>
+          <input type="text" placeholder='License' onChange={handleChange} name="license"/>
           <input type="text" placeholder='Product_Name' onChange={handleChange} name="product_name"/>
           <input type="number" placeholder='Product_Number' onChange={handleChange} name="product_no"/>
           <input type="text" placeholder='Product_Description' onChange={handleChange} name="product_description"/>
           <input type="number" placeholder='Price' onChange={handleChange} name="price"/>
+          <div className='flex  '>
+            <input className='w-full' type="text" placeholder='Image A'  onChange={handleChange} name="product_name"/>
+            <input className='w-full' type="text" placeholder='Image B'  onChange={handleChange} name="product_name"/>
+          </div>
+     
         </div>
         <button onClick={handleClick} type="button" className='cardbtn mt-2  w-[400px] h-[2.5rem]  rounded-[28px] bg-[#f3f3f7] '>ADD NEW</button>
       </form>

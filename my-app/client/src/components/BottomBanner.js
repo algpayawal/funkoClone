@@ -1,5 +1,5 @@
 import React from 'react'
-import "../assets/home.css"
+import "../assets/homepage.css"
 import botBanner from "../assets/images/home/botBanner.png";
 
 export const BottomBanner = () => {

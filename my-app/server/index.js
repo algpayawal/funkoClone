@@ -44,9 +44,10 @@ app.get("/products/details/:id", (req, res)=>{
 
 // -----------------------post---------------------------- 
 app.post("/insertProducts", (req, res)=>{
-    const q = "INSERT INTO `test`.`products` (`category`, `product_name`, `product_no`, `product_description`, `price`) VALUES (?);"
+    const q = "INSERT INTO `test`.`products` (`category`, `license`, `product_name`, `product_no`, `product_description`, `price`) VALUES (?);"
     const values = [ 
         req.body.category, 
+        req.body.license, 
         req.body.product_name, 
         req.body.product_no, 
         req.body.product_description, 
@@ -62,12 +63,13 @@ app.post("/insertProducts", (req, res)=>{
 // -----------------------put---------------------------- 
 app.put("/updateProducts/:id", (req, res)=>{
     const bookId = req.params.id;
-    const q = "UPDATE `test`.`products` SET `category` = ?, `product_name` = ?, `product_no` = ?, `product_description` = ?, `price` = ? WHERE id = ?"
+    const q = "UPDATE `test`.`products` SET `category` = ?, `license` = ?, `product_name` = ?, `product_no` = ?, `product_description` = ?, `price` = ? WHERE id = ?"
     const values = [ 
         req.body.category, 
+        req.body.license, 
         req.body.product_name, 
         req.body.product_no, 
-        req.body_description, 
+        req.body.product_description, 
         req.body.price]
     
     db.query(q,[...values, bookId],(err, data)=>{

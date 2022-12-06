@@ -1,11 +1,11 @@
 import React from 'react'
 import MainNavigation from '../components/Navigation'
 import MainFooter from '../components/Footer'
-import Products from '../pages_crud/Products'
+import AllProducts from '../pages_crud/Products'
+import { NewReleases }  from '../pages_crud/Products'
 
-import "../assets/home.css"
-import Banner from '../components/Banner'
-import { NewReleases } from '../components/NewReleases'
+import "../assets/homepage.css"
+import Banner from '../components/Banner' 
 import BottomBanner from '../components/BottomBanner'
 import Footer from '../components/Footer'
 import { GiftGuide } from '../components/GiftGuide';
@@ -31,9 +31,9 @@ const HomePage = () => {
     </div>  
 
     <div className='new-r center'>
-      <NewReleases />
+      <NewReleases />  
     </div>
-    <Products/>
+ 
     <div className="botBanner center">
       <BottomBanner />
     </div>

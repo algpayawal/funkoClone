@@ -72,20 +72,40 @@ const ProductDetails = () => {
 }
 
 const ProductDescription = (props) => {
+  const location = useLocation()
+  const productId = location.pathname.split("/")[3]
+ 
+  const [products, setProducts]= useState([])
+  useEffect(()=>{
+      const fetchAllProducts = async()=>{
+          try{
+              const res = await axios.get("http://localhost:8080/products/details/"+productId)
+              setProducts(res.data)
+          }catch(err){
+              console.log(err)
+          }
+      }
+      fetchAllProducts()
+  },[]);
+
+
   return (
+
   <div>
+      {products.map(product=>(
         <div className='productdescription'>
         <div>
-        Score a touchdown for your National Football League collection with the exclusive Funko GOLD™ 12” NFL Deion Sanders from the Atlanta Falcons. This 12-inch tall collectible has Deion Sanders dressed in his black jersey. There’s a 1 in 6 chance you may find the chase of Deion Sanders in his white and red jersey.
+          {product.product_description}
         </div>
         <ul>
-          <li><b>Item Number:</b> 21232 </li>
-          <li><b>Category:</b> DC Comics </li>
-          <li><b>License:</b> Joker </li>
-          <li><b>Priduct Type:</b> Plush </li>
-          <li><b>Exclusivity:</b> Retailer </li>
+          <li><b>Item Number:</b>{product.product_no}</li>
+          <li><b>Category:</b>{product.category}</li>
+          <li><b>License:</b>{product.license}</li>
+          {/* <li><b>Priduct Type:</b>Plush</li>
+          <li><b>Exclusivity:</b>Retailer</li> */}
         </ul>
       </div>
+      ))}
   </div>
   )
 }
@@ -96,10 +116,7 @@ const  MainProductDetails = () => {
     <div>
       <MainNavigation/>
       <ProductDetails/>
-
       <MainFooter/>
-
-      
     </div>
   )
 }

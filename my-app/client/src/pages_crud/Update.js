@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 const Update = () => {
   const [updateProduct,setUpdateProduct] = useState({
     category:"",
+    license:"",
     product_name:"",
     product_no:"",
     product_description:"",
@@ -53,6 +54,7 @@ const Update = () => {
         <div className='addinput  flex flex-col'>
           <input type="number" placeholder='ID' onChange={handleIdChange} name="id"/>
           <input type="text" placeholder='Category' onChange={handleChange} name="category"/>
+          <input type="text" placeholder='License' onChange={handleChange} name="license"/>
           <input type="text" placeholder='Product_Name' onChange={handleChange} name="product_name"/>
           <input type="number" placeholder='Product_Number' onChange={handleChange} name="product_no"/>
           <input type="text" placeholder='Product_Description' onChange={handleChange} name="product_description"/>

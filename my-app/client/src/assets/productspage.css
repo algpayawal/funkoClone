@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.Top-Container {
+  display: grid;
+  grid-template-columns: 20% auto;
+}
+
+.Container {
+  display: grid;
+  grid-template-columns: 20% auto;
+}
+
+.left-side {
+  padding: 20px;
+  position: sticky;
+  top: 50px;
+}
+
+.side-panel{
+  position: sticky;
+  top: 50px;
+}
+
+.search .input {
+  width: 90%;
+  padding: 10px 10px;
+  margin-top: 20px;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+h1{
+  font-size: 50px;
+}
+
+h2{
+  margin-top: 25px;
+}
+
+h3{
+  font-size: small;
+  margin-top: 10px;
+}
+
+h4{
+  position: sticky;
+  top: 30px;
+  font-family: 'Poppins', sans-serif;
+}
+
+h5{
+  font-family: 'Poppins', sans-serif;
+  font-size: medium;
+}
+
+
+.right-side {
+  padding: 30px;
+  margin-top: 50px;
+  background-color: #dee0de;
+}
+
+.Filter{
+  display: none;
+}
+
+.Wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: white;
+  padding: 10px 60px;
+  font-weight: bold;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+  justify-content: left;
+}
+
+
+.right-container{
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin: 30px;
+}
+
+.sample{
+  position: relative;
+  left: 10px;
+  padding: 220px 40px;
+  margin-top: 30px;
+  margin-right: 20px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+@media screen and (max-width: 992px) {
+
+  .right-container{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    margin: 30px;
+  }
+
+  h2{
+    font-size: 20px;
+  }
+
+  .Container {
+    display: grid;
+    grid-template-columns: 25% auto;
+  }
+
+  .sample{
+    margin-right: 15px;
+  }
+
+}
+
+@media screen and (max-width: 710px) {
+
+  .right-container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 30px;
+  }
+
+  h1{
+    font-size: 35px;
+  }
+
+  h5{
+    font-size: 15px;
+  }
+
+  .left-side {
+    position: relative;
+    left: -350px;
+  }
+
+  .Container {
+    display: grid;
+    grid-template-columns: 0.1% auto;
+  }
+
+  .right-side {
+    padding: 10;
+  }
+
+  .Top-Container {
+    display: grid;
+    grid-template-columns: 0.1% auto;
+  }
+
+  .right-container{
+    margin: 0px;
+  }
+
+}
+
